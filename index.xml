@@ -13,14 +13,5 @@
 	<atom:link href="https://www.eee.wiki/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title></title>
-      <link>https://www.eee.wiki/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/about/</guid>
-      <description>fuck yeah!</description>
-    </item>
-    
   </channel>
 </rss>
