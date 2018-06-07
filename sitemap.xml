@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.eee.wiki/tags/</loc>
+    <loc>https://www.eee.wiki/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.eee.wiki/topics/</loc>
+    <loc>https://www.eee.wiki/topics/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.eee.wiki/</loc>
+    <loc>https://www.eee.wiki/</loc>
     <priority>0</priority>
   </url>
   

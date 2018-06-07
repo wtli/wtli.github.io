@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcom To My Wiki</title>
-    <link>http://www.eee.wiki/</link>
+    <link>https://www.eee.wiki/</link>
     <description>Recent content on Welcom To My Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,7 +10,7 @@
     <webMaster>976199267@qq.com (wangtian)</webMaster>
     <copyright>(c) 2018 wangtian.</copyright>
     
-	<atom:link href="http://www.eee.wiki/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.eee.wiki/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
