@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Welcom To My Wiki</title>
+    <link>https://www.eee.wiki/post/</link>
+    <description>Recent content in Posts on Welcom To My Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>976199267@qq.com (wangtian)</managingEditor>
+    <webMaster>976199267@qq.com (wangtian)</webMaster>
+    <copyright>(c) 2018 wangtian.</copyright>
+    <lastBuildDate>Thu, 12 Jul 2018 13:52:36 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.eee.wiki/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog post directory</title>
+      <link>https://www.eee.wiki/2018/07/12/blog-post-directory/</link>
+      <pubDate>Thu, 12 Jul 2018 13:52:36 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/2018/07/12/blog-post-directory/</guid>
+      <description>ops Mongo常用命令
+dev 开发类
+tags tag
+杂谈 杂谈类</description>
+    </item>
+    
+  </channel>
+</rss>

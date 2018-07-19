@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mongo on wtlinux</title>
+    <link>https://www.eee.wiki/tags/mongo/</link>
+    <description>Recent content in Mongo on wtlinux</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>976199267@qq.com (wangtian)</managingEditor>
+    <webMaster>976199267@qq.com (wangtian)</webMaster>
+    <copyright>(c) 2018 wangtian.</copyright>
+    <lastBuildDate>Tue, 17 Jul 2018 14:59:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.eee.wiki/tags/mongo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mongo常用命令</title>
+      <link>https://www.eee.wiki/posts/mongo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 17 Jul 2018 14:59:14 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/mongo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>新建  #连接数据库 mongo --host 127.0.0.1 --port 40018 #建立/切换数据库 use admin #创建集合： db.createCollection(&amp;quot;nginxlog&amp;quot;) #创建固定集合： Capped Collections db.createCollection(&amp;quot;cappedlogCollection&amp;quot;,{capped:true,size:10000,max:1000}) 判断是否为固定集合 db.cappedLogCollection.isCapped() #已存在集合转换为固定集合 db.runCommand({&amp;quot;convertToCapped&amp;quot;:&amp;quot;posts&amp;quot;,size:10000}) #登陆验证 #注意：admin创建账号之后，需要先切换到库的用户，进行认证。 db.auth(&amp;quot;userAdmin&amp;quot;,&amp;quot;userAdmin@123&amp;quot;) #索引 db.COL.ensureIndex({KEY:1}) # 在后台创建索引 db.values.ensureIndex({open: 1, close: 1},{background: true})  删除  #删除数据库 use haha db.dropDatabase() #删除集合 db.collection.drop() #删除指定集合，集合名site db.site.drop() #删除所有数据 db.COL.remove({}) #删除全文索引 db.poste.getIndexes() #删除文档 db.COL.remove()  修改 #修改密码 db.changeUserPassword(&#39;tank2&#39;,&#39;test&#39;) #插入文档 db.COLLECTION_NAME.insert(document) #更新文档 db.COL.update() db.COL.save()  查询 #查看数据库 show dbs #查看集合： show collections #查看集合数据： db.COLLECTION_NAME.find() #查看集合数据易读 db.</description>
+    </item>
+    
+  </channel>
+</rss>

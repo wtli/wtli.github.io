@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title> Kafka - wtlinux-职业生涯记录</title>
+  <meta name="description" content="wtlinux-职业生涯记录" />
+  <meta property="og:title" content="Kafka" />
+  <meta name="twitter:title" content="Kafka" />
+  <meta name="author" content="wangtian"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.eee.wiki/tags/kafka/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="wtlinux" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="https://www.eee.wiki/tags/kafka/" />
+  <link rel="alternate" href="https://www.eee.wiki/index.xml" type="application/rss+xml" title="wtlinux">
+  <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://www.eee.wiki/css/main.css" />
+  <link rel="stylesheet" href="https://www.eee.wiki/css/search.css" />
+  
+  
+
+<meta name="baidu-site-verification" content="g8IYR9SNLF" />
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?11f7d254cfa4e0ca44b175c66d379ecc";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<link rel="stylesheet" href="https://www.eee.wiki/css/prism.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.eee.wiki/">wtlinux</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/home">Home</a>
+              
+              
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Categories</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://www.eee.wiki/tags/ops">ops</a>
+                
+                
+                  <a href="https://www.eee.wiki/tags/dev">dev</a>
+                
+                
+                  <a href="https://www.eee.wiki/tags/error">error</a>
+                
+                
+                  <a href="https://www.eee.wiki/tags">Tags</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+              
+              
+            </li>
+          
+        
+          
+            <li>
+              <a title="talk" href="/tags/talk">talk</a>
+              
+              
+            </li>
+          
+        
+
+        
+
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-md-offset-0">
+            <div class="page-heading">
+              <h1>#Kafka</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="https://www.eee.wiki/posts/kafka%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                <h2 class="post-title">Kafka常用命令</h2>
+
+                
+                  <h3 class="post-subtitle">
+                    kafka
+                  </h3>
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on July 17, 2018
+              </p>
+              <div class="post-entry">
+                
+                  增  #启动 nohup /usr/local/kafkabin/zookeeper-server-start.sh /usr/local/kafka/config/server.properties &amp; #创建topic bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 5 --topic test #topic创建注意事项 --replication-factor:指定副本数量，最少为2，如果对持久化要求高，可以跟集群主机数量相同 --partitions:指定分区数量，一般大于broker数量(负载均衡)，且大于consumer数量（消费对等），一个partition只能被一个consumer消费 #发送消息 bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test #接收消息 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-geginning #添加配置 bin/kafka-configs.sh --zookeeper zk_host:port/chroot --entity-type topics --entity-name my_topic_name --alter --add-config x=y  查  #查看topic列表 bin/kafka-topics.sh --zookeeper localhost:2181 --list #查看topic详情 bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test #查看消费者位置 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group bin/kafka-consumer-groups.sh --zookeeper localhost:2181 --describe --group my-group #查看消费者列表 bin/kafka-consumer-groups.
+                  <a href="https://www.eee.wiki/posts/kafka%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://www.eee.wiki/tags/kafka/">kafka</a>&nbsp;
+                  
+                    #<a href="https://www.eee.wiki/tags/ops/">ops</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+        </div>
+        
+      </div>
+    <div align="center" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+
+        
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ft8a0o1hlcj30ax0azjt4.jpg">
+          
+              <li>
+                <a href="mailto:976199267@qq.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/wtli/wtli.github.io" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+        &copy;2017-2018
+          
+            
+              wangtian
+            
+          
+          
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.eee.wiki/">wtlinux</a>
+          
+        </p>
+        <p class="credits theme-by text-muted">
+        <a href="http://www.wtlinux.com">wtlinux.com</a>&nbsp;&bull;&nbsp;<a href="https://www.eee.wiki">eee.wiki</a>&nbsp;&bull;&nbsp;<a href="https://www.bldz.com">www.bldz.com</a>
+        </p>
+
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/bootstrap.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/photoswipe-ui-default.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/photoswipe.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/auto-render.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/main.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/prism.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/katex.min.js"></script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+  </body>
+</html>
+

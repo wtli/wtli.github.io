@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on wtlinux</title>
+    <link>https://www.eee.wiki/tags/python/</link>
+    <description>Recent content in Python on wtlinux</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>976199267@qq.com (wangtian)</managingEditor>
+    <webMaster>976199267@qq.com (wangtian)</webMaster>
+    <copyright>(c) 2018 wangtian.</copyright>
+    <lastBuildDate>Thu, 19 Jul 2018 10:55:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.eee.wiki/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python流程控制</title>
+      <link>https://www.eee.wiki/posts/python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Thu, 19 Jul 2018 10:55:44 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <description>python流程控制条件  if语法
+if expression: # 表达式： statement(s) # 代码块 elif expression: statement(s) else exdpression: statement(s)  分数判断
+例如
+  [root@wangtian day02]# cat 2.py #!/usr/bin/python score = int(raw_input(&amp;quot;Please input num: &amp;quot;)) if score &amp;gt;= 90: print &#39;A&#39; print &#39;very good&#39; elif score &amp;gt;= 80: print &#39;B&#39; print &#39;good&#39; elif score &amp;gt;= 70: print &#39;C&#39; print &#39;pass&#39; else: print &#39;game over&#39; print &#39;END&#39;   操作  效果
+[root@wangtian day02]# python 2.</description>
+    </item>
+    
+  </channel>
+</rss>
