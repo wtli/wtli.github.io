@@ -9,7 +9,7 @@
     <managingEditor>976199267@qq.com (wangtian)</managingEditor>
     <webMaster>976199267@qq.com (wangtian)</webMaster>
     <copyright>(c) 2018 wangtian.</copyright>
-    <lastBuildDate>Thu, 19 Jul 2018 10:55:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 15:07:07 +0800</lastBuildDate>
     
 	<atom:link href="https://www.eee.wiki/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
     <item>
       <title>Dev</title>
       <link>https://www.eee.wiki/tags/dev/</link>
-      <pubDate>Thu, 19 Jul 2018 10:55:44 +0800</pubDate>
+      <pubDate>Thu, 19 Jul 2018 15:07:07 +0800</pubDate>
       <author>976199267@qq.com (wangtian)</author>
       <guid>https://www.eee.wiki/tags/dev/</guid>
       <description></description>
@@ -33,29 +33,11 @@
     </item>
     
     <item>
-      <title>Istio</title>
-      <link>https://www.eee.wiki/tags/istio/</link>
-      <pubDate>Wed, 18 Jul 2018 13:39:57 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/istio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kafka</title>
       <link>https://www.eee.wiki/tags/kafka/</link>
       <pubDate>Tue, 17 Jul 2018 16:59:56 +0800</pubDate>
       <author>976199267@qq.com (wangtian)</author>
       <guid>https://www.eee.wiki/tags/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://www.eee.wiki/tags/kubernetes/</link>
-      <pubDate>Wed, 18 Jul 2018 13:39:57 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -98,18 +80,9 @@
     <item>
       <title>Python</title>
       <link>https://www.eee.wiki/tags/python/</link>
-      <pubDate>Thu, 19 Jul 2018 10:55:44 +0800</pubDate>
+      <pubDate>Thu, 19 Jul 2018 15:07:07 +0800</pubDate>
       <author>976199267@qq.com (wangtian)</author>
       <guid>https://www.eee.wiki/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Service Mesh</title>
-      <link>https://www.eee.wiki/tags/service-mesh/</link>
-      <pubDate>Wed, 18 Jul 2018 13:39:57 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/service-mesh/</guid>
       <description></description>
     </item>
     

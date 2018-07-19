@@ -5,18 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title> Wtlinux - wtlinux-职业生涯记录</title>
+  <title> wtlinux - wtlinux-职业生涯记录</title>
   <meta name="description" content="wtlinux-职业生涯记录" />
-  <meta property="og:title" content="Wtlinux" />
-  <meta name="twitter:title" content="Wtlinux" />
+  <meta property="og:title" content="wtlinux" />
+  <meta name="twitter:title" content="wtlinux" />
   <meta name="author" content="wangtian"/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://www.eee.wiki/tags/wtlinux/" />
+  <meta property="og:url" content="https://www.eee.wiki/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="wtlinux" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://www.eee.wiki/tags/wtlinux/" />
+  <link rel="canonical" href="https://www.eee.wiki/" />
   <link rel="alternate" href="https://www.eee.wiki/index.xml" type="application/rss+xml" title="wtlinux">
   <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -179,14 +179,34 @@
 
 
     
+  
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-md-offset-0">
             <div class="page-heading">
-              <h1>#Wtlinux</h1>
-              <hr class="small">
+                <h1 align="center">wtlinux</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -194,83 +214,115 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
+  <div role="main" class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
+        
+        
         <div class="posts-list">
           
+          
             <article class="post-preview">
-              <a href="https://www.eee.wiki/home/">
-                <h2 class="post-title">全文索引</h2>
-
+              <a href="https://www.eee.wiki/posts/mongo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                <h2 class="post-title">Mongo常用命令</h2>
                 
                   <h3 class="post-subtitle">
-                    目录
+                  mongo
                   </h3>
                 
               </a>
 
-              <p class="post-meta">
-                Posted on July 13, 2018
-              </p>
+              <span class="post-meta">
+  
+  Posted on July 17, 2018
+  
+  
+</span>
+
+
               <div class="post-entry">
                 
-                  
-
-<h1 id="ops">ops</h1>
-
-<p><a href="/posts/mongo常用命令/">Mongo常用命令</a></p>
-
-<p><a href="/posts/kafka常用命令/">Kafka常用命令</a></p>
-
-<h1 id="dev">dev</h1>
-
-<p><a href="/posts/python流程控制">python流程控制</a></p>
-
-<p><a href="/posts/python常用数据类型">python常用数据类型</a></p>
-
-<p><a href="/posts/python文件处理">python文件处理</a></p>
-
-<p><a href="/posts/python函数和装饰器">python函数和装饰器</a></p>
-
-<p><a href="/posts/python递归和反射">python递归和反射</a></p>
-
-<p><a href="/posts/python常用标准库">python常用标准库</a></p>
-
-<p><a href="/posts/python面向对象编程">python面向对象编程</a></p>
-
-<h1 id="errors">errors</h1>
-
-<p><a href="/posts/常见nginx故障排查">常见nginx故障排查</a></p>
-
-<h1 id="talk">talk</h1>
-
-<p><a href="talk/2018年中总结/">2018年中总结</a></p>
-
+                  新建  #连接数据库 mongo --host 127.0.0.1 --port 40018 #建立/切换数据库 use admin #创建集合： db.createCollection(&quot;nginxlog&quot;) #创建固定集合： Capped Collections db.createCollection(&quot;cappedlogCollection&quot;,{capped:true,size:10000,max:1000}) 判断是否为固定集合 db.cappedLogCollection.isCapped() #已存在集合转换为固定集合 db.runCommand({&quot;convertToCapped&quot;:&quot;posts&quot;,size:10000}) #登陆验证 #注意：admin创建账号之后，需要先切换到库的用户，进行认证。 db.auth(&quot;userAdmin&quot;,&quot;userAdmin@123&quot;) #索引 db.COL.ensureIndex({KEY:1}) # 在后台创建索引 db.values.ensureIndex({open: 1, close: 1},{background: true})  删除  #删除数据库 use haha db.dropDatabase() #删除集合 db.collection.drop() #删除指定集合，集合名site db.site.drop() #删除所有数据 db.COL.remove({}) #删除全文索引 db.poste.getIndexes() #删除文档 db.COL.remove()  修改 #修改密码 db.changeUserPassword('tank2','test') #插入文档 db.COLLECTION_NAME.insert(document) #更新文档 db.COL.update() db.COL.save()  查询 #查看数据库 show dbs #查看集合： show collections #查看集合数据： db.COLLECTION_NAME.find() #查看集合数据易读 db.
+                  <a href="https://www.eee.wiki/posts/mongo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-read-more">[Read More]</a>
                 
               </div>
 
               
                 <span class="post-meta">
-                  
-                    #<a href="https://www.eee.wiki/tags/%E7%9B%AE%E5%BD%95/">目录</a>&nbsp;
-                  
-                    #<a href="https://www.eee.wiki/tags/%E7%B4%A2%E5%BC%95/">索引</a>&nbsp;
-                  
-                    #<a href="https://www.eee.wiki/tags/wtlinux/">wtlinux</a>&nbsp;
-                  
+                
+                  #<a href="https://www.eee.wiki/tags/mongo/">mongo</a>&nbsp;
+                
+                  #<a href="https://www.eee.wiki/tags/ops/">ops</a>&nbsp;
+                
                 </span>
               
-
             </article>
           
         </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="/page/1">&larr; Newer Posts</a>
+              </li>
+            
+            
+          </ul>
         
       </div>
-    <div align="center" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div align="center" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    >
+    <a href="/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    class="active"><a href="/page/2/">2</a></li>
+    
+    
+    <li
+    class="disabled">
+    <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
 
         
         

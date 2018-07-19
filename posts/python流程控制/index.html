@@ -268,8 +268,6 @@
   <aside class="toc">
     <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
 <li><a href="#python流程控制条件">python流程控制条件</a></li>
 <li><a href="#总结">总结</a></li>
 <li><a href="#循环">循环</a></li>
@@ -308,7 +306,6 @@
 <li><a href="#while循环">while循环</a></li>
 <li><a href="#with-while循环">with+while循环</a></li>
 <li><a href="#总结-2">总结</a></li>
-</ul></li>
 </ul>
 </nav>
   </aside>
@@ -316,7 +313,7 @@
 
                 
 
-<h2 id="python流程控制条件">python流程控制条件</h2>
+<h1 id="python流程控制条件">python流程控制条件</h1>
 
 <ul>
 <li><p>if语法</p>
@@ -420,21 +417,21 @@ please input [YES/NO]: a
 please input [YES/NO]:
 </code></pre>
 
-<h2 id="总结">总结</h2>
+<h1 id="总结">总结</h1>
 
 <pre><code>除了shell之外，1返回的是正确，0返回的是错误。
 逻辑值（bool）包含了两个值：True：表示非空的量（比如：string,tuple,list,set,dictonary）,所有非零数。Fasle：表示0，None，空的量等。
 多条件判断可以用and，or 等
 </code></pre>
 
-<h2 id="循环">循环</h2>
+<h1 id="循环">循环</h1>
 
 <ul>
 <li>循环是一个结构，导致程序要重复一定的次数。</li>
 <li>条件循环也是如此，当条件变为假，循环结束。</li>
 </ul>
 
-<h2 id="for循环">for循环</h2>
+<h1 id="for循环">for循环</h1>
 
 <ul>
 <li>for循环：在序列里，使用for循环遍历。</li>
@@ -484,7 +481,7 @@ In [9]: for i in range(10):
 
 </code></pre>
 
-<h3 id="脚本简单使用">脚本简单使用</h3>
+<h2 id="脚本简单使用">脚本简单使用</h2>
 
 <pre><code>[root@wangtian day02]# cat 5.py 
 #!/usr/bin/python
@@ -509,7 +506,7 @@ print [i**2 for i in range(1,11) if i % 2 != 0]
 
 </code></pre>
 
-<h3 id="for典型1-100python脚本">for典型1+&hellip;+100python脚本</h3>
+<h2 id="for典型1-100python脚本">for典型1+&hellip;+100python脚本</h2>
 
 <pre><code>#!/usr/bin/python
 sum = 0
@@ -520,14 +517,14 @@ print sum
 
 </code></pre>
 
-<h3 id="数列小细节">数列小细节</h3>
+<h2 id="数列小细节">数列小细节</h2>
 
 <pre><code>range  占用内存
 xrange  遍历的时候才会占用内存
 推荐使用xrange
 </code></pre>
 
-<h2 id="迭代遍历">迭代遍历</h2>
+<h1 id="迭代遍历">迭代遍历</h1>
 
 <ul>
 <li>遍历序列：将序列中各个元素取出来。
@@ -535,7 +532,7 @@ xrange  遍历的时候才会占用内存
 -通过索引来取值</li>
 </ul>
 
-<h3 id="简单操作">简单操作</h3>
+<h2 id="简单操作">简单操作</h2>
 
 <ul>
 <li>通过循环的方法遍历字典</li>
@@ -602,7 +599,7 @@ e 100
 d 100
 </code></pre>
 
-<h3 id="内嵌for循环经典-九九乘法表">内嵌for循环经典-九九乘法表</h3>
+<h2 id="内嵌for循环经典-九九乘法表">内嵌for循环经典-九九乘法表</h2>
 
 <ul>
 <li>操作</li>
@@ -633,7 +630,7 @@ for i in xrange(1,10):                                      #乘法表不需要0
 
 </code></pre>
 
-<h2 id="for循环-1">for循环</h2>
+<h1 id="for循环-1">for循环</h1>
 
 <ul>
 <li>for</li>
@@ -641,7 +638,7 @@ for i in xrange(1,10):                                      #乘法表不需要0
 <li>for 循环如果正常结束，才会执行else语句。</li>
 </ul>
 
-<h3 id="常用关键字">常用关键字</h3>
+<h2 id="常用关键字">常用关键字</h2>
 
 <pre><code>break
 continue
@@ -649,7 +646,7 @@ exit
 pass
 </code></pre>
 
-<h3 id="操作">操作</h3>
+<h2 id="操作">操作</h2>
 
 <p><strong>例如</strong></p>
 
@@ -672,7 +669,7 @@ else:
 print &quot;hahaha&quot;
 </code></pre>
 
-<h3 id="猜随机数">猜随机数</h3>
+<h2 id="猜随机数">猜随机数</h2>
 
 <pre><code>[root@wangtian day02]# cat 10.py 
 #!/usr/bin/env python
@@ -697,16 +694,16 @@ print &quot;samller than right&quot;
 
 </code></pre>
 
-<h2 id="while">while</h2>
+<h1 id="while">while</h1>
 
-<h3 id="while与for相比">while与for相比</h3>
+<h2 id="while与for相比">while与for相比</h2>
 
 <ul>
 <li>for循环用在有次数的循环上。</li>
 <li>while循环用在有条件的控制上。</li>
 </ul>
 
-<p>## while循环</p>
+<p># while循环</p>
 
 <ul>
 <li>while循环，直到表达式变为假，才推出while循环，表达式是一个逻辑表达式，必须返回一个True或False。</li>
@@ -717,7 +714,7 @@ print &quot;samller than right&quot;
     statement(s)
 </code></pre>
 
-<h3 id="操作-1">操作</h3>
+<h2 id="操作-1">操作</h2>
 
 <p><strong>例1</strong></p>
 
@@ -781,7 +778,7 @@ please input: w
 please input: q
 </code></pre>
 
-<h2 id="打开文件的方法">打开文件的方法</h2>
+<h1 id="打开文件的方法">打开文件的方法</h1>
 
 <p>r: 以读方式打开
 w: 以写方式打开<br />
@@ -800,7 +797,7 @@ ab+: 以二进制读写模式打开</p>
 <li><p>注意
 <font color=red>以w打开文件会覆盖原来的文件</font></p>
 
-<h2 id="读取文件的方法">读取文件的方法</h2></li>
+<h1 id="读取文件的方法">读取文件的方法</h1></li>
 </ul>
 
 <pre><code>In [31]: fd.
@@ -852,14 +849,14 @@ StopIteration                             Traceback (most recent call last)
 ----&gt; 1 fd.next()
 </code></pre>
 
-<h3 id="小结">小结</h3>
+<h2 id="小结">小结</h2>
 
 <pre><code>fd.read()：返回的是字符串
 fd.readline()：返回的是每一行字符串
 fd.readlines()：返回的是一行列表
 </code></pre>
 
-<h2 id="for遍历文件的方法">for遍历文件的方法</h2>
+<h1 id="for遍历文件的方法">for遍历文件的方法</h1>
 
 <pre><code>[root@wangtian day02]# cat /tmp/tmp.txt
 1
@@ -887,21 +884,21 @@ for line in fd:
 3
 </code></pre>
 
-<h3 id="小结-1">小结：</h3>
+<h2 id="小结-1">小结：</h2>
 
 <pre><code>print line后面加个逗号，可以抑制print默认的换行。
 for line in fd.readlines(): 这种方法会全部加在到内存中，不建议使用
 for line in fd: 这种方法类似于fd.next()，没循环一次加在一行，推荐使用。
 </code></pre>
 
-<h2 id="总结-1">总结</h2>
+<h1 id="总结-1">总结</h1>
 
 <pre><code>打开文件的时候要使用w方法会覆盖原来的文件，谨慎使用
 read(),readline()readlins()的区别是字符串和列表
 使用方法的时候选择最小消耗资源的方式
 </code></pre>
 
-<h2 id="while循环">while循环</h2>
+<h1 id="while循环">while循环</h1>
 
 <pre><code>[root@wangtian day02]# cat 16.py 
 #!/usr/bin/python
@@ -919,7 +916,7 @@ fd.close
 3
 </code></pre>
 
-<h2 id="with-while循环">with+while循环</h2>
+<h1 id="with-while循环">with+while循环</h1>
 
 <pre><code>[root@wangtian day02]# cat 17.py 
 #!/usr/bin/python
@@ -936,7 +933,7 @@ with open('/tmp/tmp.txt') as fd:
 3
 </code></pre>
 
-<h2 id="总结-2">总结</h2>
+<h1 id="总结-2">总结</h1>
 
 <pre><code>for循环有一定的次数
 while循环需要给出条件，条件语句后面要加:
@@ -960,6 +957,17 @@ with+while进行循环就不用加close的方法
             
             <div>
                  
+                <h2>See Also</h2>
+                <ul>
+                    
+                    <li><a href="/posts/kafka%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Kafka常用命令</a></li>
+                    
+                    <li><a href="/posts/2018%E5%B9%B4%E4%B8%AD%E6%80%BB%E7%BB%93/">2018年中总结</a></li>
+                    
+                    <li><a href="/posts/mongo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Mongo常用命令</a></li>
+                    
+                </ul>
+                
             </div>
             
             

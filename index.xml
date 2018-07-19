@@ -1,18 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>_Index on wtlinux</title>
+    <title>wtlinux</title>
     <link>https://www.eee.wiki/</link>
-    <description>Recent content in _Index on wtlinux</description>
+    <description>Recent content on wtlinux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>976199267@qq.com (wangtian)</managingEditor>
     <webMaster>976199267@qq.com (wangtian)</webMaster>
     <copyright>(c) 2018 wangtian.</copyright>
-    <lastBuildDate>Wed, 18 Jul 2018 13:39:57 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 15:07:07 +0800</lastBuildDate>
     
 	<atom:link href="https://www.eee.wiki/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python面向对象编程</title>
+      <link>https://www.eee.wiki/posts/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Thu, 19 Jul 2018 15:07:07 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</guid>
+      <description>面向对象简介 将抽象事物实例化，我们写的代码原则：
+1、不写重复的代码
+2、代码会经常修改、变更
+面向对象编程（Object Oriented Programming，简称OOP），是一种程序设计思想。OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数（我们称之为方法）。
+我们之前讲的大部分都是面向过程编程，也就是根据业务逻辑从上到下写垒代码，为了简化操作或者避免重复的代码将某功能代码封装到函数中，日后便无需重复编写，仅调用函数即可。
+而面向对象思想是把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。
+其实在Python中面向对象无处不在，我们之前讲的所有的数据类型都是所对应的数据对象。每种数据类型都有自己的方法。从这章开始我们更多的是要自己创建各种数据类型，也就是真正开始和类以及对象打交道了。
+面向对象的几个核心特点： Class类
+一个类即是对一类拥有相同属性的对象的抽象、蓝图、原型。在类中定义了这些对象的都具备的属性（variables(data)）、共同的方法
+Object 对象
+一个对象即是一个类的实例化后实例，一个类必须经过实例化后方可在程序中调用，一个类可以实例化多个对象，每个对象亦可以有不同的属性，就像人类是指所有人，每个人是指具体的对象，人与人之前有共性，亦有不同
+Encapsulation 封装
+在类中对数据的赋值、内部调用对外部用户是透明的，这使类变成了一个胶囊或容器，里面包含着类的数据和方法
+Inheritance 继承
+一个类可以派生出子类，在这个父类里定义的属性、方法自动被子类继承
+Polymorphism 多态
+多态是面向对象的重要特性,简单点说:“一个接口，多种实现”，指一个基类中派生出了不同的子类，且每个子类在继承了同样的方法名的同时又对父类的方法做了不同的实现，这就是同一种事物表现出的多种形态。
+编程其实就是一个将具体世界进行抽象化的过程，多态就是抽象化的一种体现，把一系列具体事物的共同点抽象出来, 再通过这个抽象的事物, 与不同的具体事物进行对话。
+对不同类的对象发出相同的消息将会有不同的行为。比如，你的老板让所有员工在九点钟开始工作, 他只要在九点钟的时候说：“开始工作”即可，而不需要对销售人员说：“开始销售工作”，对技术人员说：“开始技术工作”, 因为“员工”是一个抽象的事物, 只要是员工就可以开始工作，他知道这一点就行了。至于每个员工，当然会各司其职，做各自的工作。
+多态允许将子类的对象当作父类的对象使用，某父类型的引用指向其子类型的对象,调用的方法是该子类型的方法。这里引用和调用方法的代码编译前就已经决定了,而引用所指向的对象可以在运行期间动态绑定。
+针对上述核心特点，下文将会进一步详解。
+我们先举个例子对来面向对象有个概念，以及它与面向过程的区别。
+假如我们描述一包烟，每包烟都有自己的名字，价格，产地，在面向对象的过程中，我们为了方便取出某一属性，习惯用字典来描述一包烟的所有属性。
+ smoke = {&amp;quot;name&amp;quot;:&amp;quot;peony&amp;quot;,&amp;quot;price&amp;quot;:&amp;quot;13&amp;quot;,&amp;quot;place&amp;quot;:“shanghai”}  如果我们需要取出它的某一属性比如它的产地，我们可以通过smoke[&amp;laquo;place&amp;raquo;]方式取出来，如果函数来操作这包烟的话，可以把这个字典作为参数传到函数中，例如：
+ #!/usr/bin/env python3 # -*- conding: utf-8 -*- smoke = {&amp;quot;name&amp;quot;:&amp;quot;peony&amp;quot;,&amp;quot;price&amp;quot;:&amp;quot;13&amp;quot;,&amp;quot;place&amp;quot;:&amp;quot;shanghai&amp;quot;} def print_info(smoke): print(&#39;name: %s\nprice: %s\nplace: %s&#39; %(smoke[&#39;name&#39;],smoke[&#39;price&#39;],smoke[&#39;place&#39;])) print_info(smoke) #output name: peony price: 13 place: shanghai  我们再来看一下面向对象</description>
+    </item>
+    
+    <item>
+      <title>Python常用标准库</title>
+      <link>https://www.eee.wiki/posts/python%E5%B8%B8%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93/</link>
+      <pubDate>Thu, 19 Jul 2018 14:56:33 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E5%B8%B8%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93/</guid>
+      <description>模块简介 模块分类 自定义模块 第三方模块 内置模块 注意：自定义模块名不能以数字开头，并且避免与内置函数名相同  导入模块 import sys form lib import content from lib import content as bbb #模块设置别名 from lib.content import func1 ## 自定义模块导入： sys.path.append(&#39;D:&#39;)  re 元字符 python中re模块提供了正则表达式相关操作 字符：
+　. 匹配除换行符以外的任意字符 \w	匹配字母或数字或下划线或汉字 \s	匹配任意的空白符 \d	匹配数字 \b	匹配单词的开始或结束 ^	匹配字符串的开始 $	匹配字符串的结束  次数：
+　* 重复零次或更多次 +	重复一次或更多次 ?	重复零次或一次 {n}	重复n次 {n,}	重复n次或更多次 {n,m}	重复n到m次  match # match，从起始位置开始匹配，匹配成功返回一个对象，未匹配成功返回None match(pattern, string, flags=0) # pattern： 正则模型 # string ： 要匹配的字符串 # falgs ： 匹配模式 X VERBOSE Ignore whitespace and comments for nicer looking RE&#39;s.</description>
+    </item>
+    
+    <item>
+      <title>Python递归和反射</title>
+      <link>https://www.eee.wiki/posts/python%E9%80%92%E5%BD%92%E5%92%8C%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Thu, 19 Jul 2018 13:48:16 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E9%80%92%E5%BD%92%E5%92%8C%E5%8F%8D%E5%B0%84/</guid>
+      <description>递归 递归算法是一种直接或者间接地调用资深算法的过程。再计算机编写程序中，递归算法对解决一大类问题是十分有效的，它往往使算法的描述简洁而且易于理解。
+特点 递归算法解决问题的特点： 递归就是在过程或者函数里调用自身。 在使用递归策略时，必须有一个明确的递归结束条件，称为递归出口。 递归算法解题通常显得很简洁，但递归算法解题的运行效率较低。所以一般不提倡递归算法设计程序。 在递归调用的过程当中系统为每一层的返回点、局部变量等开辟了栈来存储。递归次数过多容易造成堆栈溢出等，所以一般不抵偿递归算法设计程序。
+要求 递归算法所体现的“重复”一般有三个要求： 一是每次调用在规模上都有所缩小（通常是减半）； 二是相邻两次重复之间有紧密的联系，前一次要为后一次做准备（通常前一次的输出就作为后一次的输入）； 三是在问题的规模极小时必须用直接给出解答而不再进行递归调用，因而每次递归调用都是有条件的（以规模未达到直接解答的大小为条件），无条件递归调用将会成为死循环而不能正常结束。
+简单递归实现 def calc(n): print(n) if n/2 &amp;gt; 1: res = calc(n/2) print(&#39;res:&#39;,res) print(&amp;quot;N:&amp;quot;,n) return n calc(10) # 执行结果 10 5.0 2.5 1.25 N: 1.25 res: 1.25 N: 2.5 res: 2.5 N: 5.0 res: 5.0 N: 10  斐波那契数列 def func(arg1,arg2,stop): if arg1 == 0: print(arg1, arg2) arg3 = arg1 + arg2 print(arg3) if arg3 &amp;lt; stop: func(arg2, arg3,stop) func(0,1,30) # 执行结果 0 1 1 2 3 5 8 13 21 34  尾递归优化 如果一个函数中所有递归形式的调用都出现在函数的末尾，我们称这个递归函数就是尾递归。采用尾递归算法，可以极大地提高运行效率。需要说明的是，只有当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式的一部分时，这样的递归调用才是尾递归。 优于普通递归的方面： 1.</description>
+    </item>
+    
+    <item>
+      <title>Python函数和装饰器</title>
+      <link>https://www.eee.wiki/posts/python%E5%87%BD%E6%95%B0%E5%92%8C%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <pubDate>Thu, 19 Jul 2018 13:42:54 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E5%87%BD%E6%95%B0%E5%92%8C%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
+      <description>函数定义 在Python中，定义一个函数要使用def语句，依次写出函数名、括号、括号中的参数和冒号:，然后，在缩进块中编写函数体，函数的返回值用return语句返回。 我们以自定义一个求绝对值的my_abs函数为例：
+def my_abs(x): if x &amp;gt;= 0: return x else: return -x  请自行测试并调用my_abs看看返回结果是否正确。
+请注意，函数体内部的语句在执行时，一旦执行到return时，函数就执行完毕，并将结果返回。因此，函数内部通过条件判断和循环可以实现非常复杂的逻辑。
+如果没有return语句，函数执行完毕后也会返回结果，只是结果为None。
+return None可以简写为return。
+空函数 如果想定义一个什么事也不做的空函数，可以用pass语句：
+def nop(): pass  pass语句什么都不做，那有什么用？实际上pass可以用来作为占位符，比如现在还没想好怎么写函数的代码，就可以先放一个pass，让代码能运行起来。
+pass还可以用在其他语句里，比如：
+if age &amp;gt;= 18: pass  缺少了pass，代码运行就会有语法错误。
+函数作用域 块级作用域 if 1 == 1: name = &amp;quot;lzl&amp;quot; print(name) for i in range(10): age = i print(age)  运行结果：
+lzl 9  代码执行成功，没有问题；在Java/C#中，执行上面的代码会提示name，age没有定义，而在Python中可以执行成功，这是因为在Python中是没有块级作用域的，代码块里的变量，外部可以调用，所以可运行成功；
+局部作用域 def func(): name = &amp;quot;lzl&amp;quot; print(name)  运行结果：
+Traceback (most recent call last): File &amp;quot;test.</description>
+    </item>
+    
+    <item>
+      <title>Python文件处理</title>
+      <link>https://www.eee.wiki/posts/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</link>
+      <pubDate>Thu, 19 Jul 2018 13:34:10 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</guid>
+      <description>打开文件的方法 r: 以读方式打开 w: 以写方式打开 a: 以追加模式打开 r+: 以读写模式打开 w+: 以读写模式打开 a+: 以读写模式打开 rb: 以二进制读模式打开 wb: 以二进制写模式打开 ab: 以二进制追加模式打开 rb+: 以二进制读写模式打开 wb+: 以二进制读写模式打开 ab+: 以二进制读写模式打开   注意
+以w打开文件会覆盖原来的文件
+读取文件的方法  In [31]: fd. fd.close fd.errors fd.isatty fd.newlines fd.readinto fd.seek fd.truncate fd.xreadlines fd.closed fd.fileno fd.mode fd.next fd.readline fd.softspace fd.write fd.encoding fd.flush fd.name fd.read fd.readlines fd.tell fd.writelines In [30]: fd = open(&#39;/tmp/tmp.txt&#39;) In [31]: fd.read() Out[31]: &#39;1\n2\n3\n&#39; In [32]: fd = open(&#39;/tmp/tmp.</description>
+    </item>
+    
+    <item>
+      <title>Python常用数据类型</title>
+      <link>https://www.eee.wiki/posts/python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Thu, 19 Jul 2018 13:20:26 +0800</pubDate>
+      <author>976199267@qq.com (wangtian)</author>
+      <guid>https://www.eee.wiki/posts/python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>python数据类型  数值 字符串 列表 元组 字典  常用帮助方法  通过type查看类型，再看详细属性  #!/usr/bin/env python3 # -*- conding: utf-8 -*- from __future__ import division va1 = 9 / 2 1）通过type获取字符串类型，获取类型之后，获取模板，Ctrl+鼠标左键 carl = &#39;hello,world&#39; carl.upper() carl.lower() print(va1) print(type(carl)) 在属性中，找到定位功能（scroll from source） 然后点击右边的设置：show Members可以查看详细信息 int 所有对象所具备的功能都保存在相应的类 2）通过dic查看所有的功能 carl = &amp;quot;alex&amp;quot; print(dir(carl)) 3）通过help和type组合起来使用查看 carl = &amp;quot;alex&amp;quot; help(type(carl)) 4）直接点击 鼠标放在upper()上，Ctrl+左键，自动定位到upper功能处  int 案例 * 123和“123”一样吗？ &amp;gt; 123是数值，“123”是字符串
+数值类型  整型 长整型
+ 浮点型 复数型  整型 例如：</description>
+    </item>
     
     <item>
       <title>常见nginx故障排查</title>
@@ -77,8 +176,14 @@ if expression: # 表达式： statement(s) # 代码块 elif expression: statemen
       <description>ops Mongo常用命令
 Kafka常用命令
 dev python流程控制
+python常用数据类型
+python文件处理
+python函数和装饰器
+python递归和反射
+python常用标准库
+python面向对象编程
 errors 常见nginx故障排查
-闲谈 2018年中总结</description>
+talk 2018年中总结</description>
     </item>
     
     <item>

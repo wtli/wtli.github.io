@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title> Python递归和反射 - wtlinux-职业生涯记录</title>
+  <meta name="description" content="wtlinux-职业生涯记录" />
+  <meta property="og:title" content="Python递归和反射" />
+  <meta name="twitter:title" content="Python递归和反射" />
+  <meta name="description" content="介绍一些常见的Python递归和反射">
+  <meta property="og:description" content="介绍一些常见的Python递归和反射">
+  <meta name="twitter:description" content="介绍一些常见的Python递归和反射">
+  <meta name="author" content="wangtian"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.eee.wiki/posts/python%E9%80%92%E5%BD%92%E5%92%8C%E5%8F%8D%E5%B0%84/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="wtlinux" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="https://www.eee.wiki/posts/python%E9%80%92%E5%BD%92%E5%92%8C%E5%8F%8D%E5%B0%84/" />
+  <link rel="alternate" href="https://www.eee.wiki/index.xml" type="application/rss+xml" title="wtlinux">
+  <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://www.eee.wiki/css/main.css" />
+  <link rel="stylesheet" href="https://www.eee.wiki/css/search.css" />
+  
+  
+
+<meta name="baidu-site-verification" content="g8IYR9SNLF" />
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?11f7d254cfa4e0ca44b175c66d379ecc";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<link rel="stylesheet" href="https://www.eee.wiki/css/prism.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.eee.wiki/">wtlinux</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/home">Home</a>
+              
+              
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Categories</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://www.eee.wiki/tags/ops">ops</a>
+                
+                
+                  <a href="https://www.eee.wiki/tags/dev">dev</a>
+                
+                
+                  <a href="https://www.eee.wiki/tags/error">error</a>
+                
+                
+                  <a href="https://www.eee.wiki/tags">Tags</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+              
+              
+            </li>
+          
+        
+          
+            <li>
+              <a title="talk" href="/tags/talk">talk</a>
+              
+              
+            </li>
+          
+        
+
+        
+
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="https://ws2.sinaimg.cn/large/006tNc79gy1ftcuzmw47tj30hi08rgs2.jpg" data-img-desc-1="Shanghai China| 2018-07-19T13:48:16&#43;08:00"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 col-md-offset-0">
+                
+                <div class="post-heading">
+                
+                  
+                     <h1>Python递归和反射</h1>
+                     
+                     
+                  
+                  
+                  
+                    
+                      <hr class="small">
+                      <span class="post-subheading">介绍一些常见的Python递归和反射</span>
+                    
+                  
+                  
+                    <span class="post-meta">
+  
+  Posted on July 19, 2018
+  
+  
+</span>
+
+
+                  
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-md-offset-0">
+            <div class="posts-heading">
+                <h1 align="center">Python递归和反射</h1>
+                
+                  
+                    <h2 align="center" class="posts-subheading">介绍一些常见的Python递归和反射</h2>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            
+            
+              
+            <article role="main" class="blog-post" itemprop="articleBody" id="content">
+                
+   
+  <aside class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#递归">递归</a>
+<ul>
+<li><a href="#特点">特点</a></li>
+<li><a href="#要求">要求</a></li>
+<li><a href="#简单递归实现">简单递归实现</a></li>
+<li><a href="#斐波那契数列">斐波那契数列</a></li>
+<li><a href="#尾递归优化">尾递归优化</a></li>
+</ul></li>
+<li><a href="#反射">反射</a>
+<ul>
+<li><a href="#反射四种内置函数">反射四种内置函数</a></li>
+<li><a href="#讨论反射">讨论反射</a></li>
+<li><a href="#练习反射">练习反射</a></li>
+<li><a href="#其他模块反射效果">其他模块反射效果</a></li>
+<li><a href="#动态导入模块">动态导入模块</a></li>
+</ul></li>
+<li><a href="#参考文档">参考文档</a></li>
+</ul>
+</nav>
+  </aside>
+   
+
+                
+
+<h1 id="递归">递归</h1>
+
+<p>递归算法是一种直接或者间接地调用资深算法的过程。再计算机编写程序中，递归算法对解决一大类问题是十分有效的，它往往使算法的描述简洁而且易于理解。</p>
+
+<h2 id="特点">特点</h2>
+
+<p>递归算法解决问题的特点：
+递归就是在过程或者函数里调用自身。
+在使用递归策略时，必须有一个明确的递归结束条件，称为递归出口。
+递归算法解题通常显得很简洁，但递归算法解题的运行效率较低。所以一般不提倡递归算法设计程序。
+在递归调用的过程当中系统为每一层的返回点、局部变量等开辟了栈来存储。递归次数过多容易造成堆栈溢出等，所以一般不抵偿递归算法设计程序。</p>
+
+<h2 id="要求">要求</h2>
+
+<p>递归算法所体现的“重复”一般有三个要求：
+一是每次调用在规模上都有所缩小（通常是减半）；
+二是相邻两次重复之间有紧密的联系，前一次要为后一次做准备（通常前一次的输出就作为后一次的输入）；
+三是在问题的规模极小时必须用直接给出解答而不再进行递归调用，因而每次递归调用都是有条件的（以规模未达到直接解答的大小为条件），无条件递归调用将会成为死循环而不能正常结束。</p>
+
+<h2 id="简单递归实现">简单递归实现</h2>
+
+<pre><code>def calc(n):
+    print(n)
+    if n/2 &gt; 1:
+        res = calc(n/2)
+        print('res:',res)
+    print(&quot;N:&quot;,n)
+    return n
+calc(10)
+
+# 执行结果
+10
+5.0
+2.5
+1.25
+N: 1.25
+res: 1.25
+N: 2.5
+res: 2.5
+N: 5.0
+res: 5.0
+N: 10
+</code></pre>
+
+<h2 id="斐波那契数列">斐波那契数列</h2>
+
+<pre><code>def func(arg1,arg2,stop):
+    if arg1 == 0:
+        print(arg1, arg2)
+    arg3 = arg1 + arg2
+    print(arg3)
+    if arg3 &lt; stop:
+        func(arg2, arg3,stop)
+func(0,1,30)
+# 执行结果
+0 1
+1
+2
+3
+5
+8
+13
+21
+34
+</code></pre>
+
+<h2 id="尾递归优化">尾递归优化</h2>
+
+<p>如果一个函数中所有递归形式的调用都出现在函数的末尾，我们称这个递归函数就是尾递归。采用尾递归算法，可以极大地提高运行效率。需要说明的是，只有当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式的一部分时，这样的递归调用才是尾递归。
+优于普通递归的方面：
+1.尾递归通过迭代的方式，不存在子问题被多次计算的情况
+2.尾递归的调用发生在方法的末尾，在计算过程中，完全可以把上一次留在堆栈的状态擦掉，保证程序以O(1)的空间复杂度运行。</p>
+
+<h1 id="反射">反射</h1>
+
+<h2 id="反射四种内置函数">反射四种内置函数</h2>
+
+<p>1、python中的反射功能是由四种内置函数来提供的，hasattr,setattr,getattr,delattr这四个内置函数分别用于对对象内部执行：检查是否含有某成员，设置某成员，获取某成员，删除成员</p>
+
+<pre><code>class Foo(object):
+
+    def __init__(self):
+        self.name = 'tom'
+
+    def func(self):
+        return 'func'
+
+obj = Foo()
+
+# ## 检查是否含有成员 ##
+hasattr(obj, 'name')
+hasattr(obj, 'func')
+
+# ## 获取成员 ##
+getattr(obj, 'name')
+getattr(obj, 'func')
+
+# ## 设置成员 ##
+setattr(obj, 'age', 18)
+setattr(obj, 'show', lambda num: num + 1)
+
+# ## 删除成员 ##
+delattr(obj, 'name')
+delattr(obj, 'func')
+</code></pre>
+
+<h2 id="讨论反射">讨论反射</h2>
+
+<p>2、下面通过例子一步步的讨论反射：</p>
+
+<p>1）、我们模拟web为例</p>
+
+<pre><code>def index():
+    return 'home.index'
+
+def dev():
+    return 'home.dev'
+</code></pre>
+
+<pre><code>import home
+url = raw_input(&quot;url:&quot;)
+if url == &quot;home/dev&quot;:
+    ret = home.dev()
+    print ret
+elif url == &quot;home/index&quot;:
+    ret = home.index()
+    print ret
+else:
+    print &quot;404&quot;
+</code></pre>
+
+<p>这就是说我们输入对应的url,再进行判断找到符合条件的url,返回值
+下面我们采用反射来进行操作</p>
+
+<pre><code>url = raw_input(&quot;url:&quot;)
+#url = home/dev
+controller,action = url.split('/')
+import home
+#action = 字符串
+#去某个容器或模块中，找函数，字符串是函数名，如果有，则获取函数
+func = getattr(home,action)
+#在home中找action，如果有则返回函数名
+ret = func()#函数名加括号，表示执行函数，返回结果ret
+print ret
+</code></pre>
+
+<p>这样一来在上面的代码中就不需要再进行判断，只需去在home模块中寻找符合的url，这对于大量的url来说，用反射就简单了。</p>
+
+<p>2）对四种内置函数产生的结果进行比较</p>
+
+<pre><code>import home
+print dir(home)#结果为['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'dev', 'index']
+print hasattr(home,'dev')#结果为True
+print getattr(home,'dev')#结果&lt;function dev at 0x026072F0&gt;
+
+setattr(home,'show',lambda x : x + 1)
+print dir(home)
+#结果为['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'dev', 'index', '#show']
+#多了show
+delattr(home,'show')
+print dir(home)
+#结果为['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'dev', 'index']
+#将show删除了
+</code></pre>
+
+<h2 id="练习反射">练习反射</h2>
+
+<p>3）在web上进行测试（练习反射）</p>
+
+<pre><code>#!/usr/bin/env python
+#coding:utf-8
+from wsgiref.simple_server import make_server
+
+def RunServer(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/html')])
+    url = environ['PATH_INFO']
+    temp = url.split('/')[1]
+    import home
+    #去home模块中检查，是否含有指定的函数
+    is_exist = hasattr(home, temp)
+    #如果存在指定的函数
+    if is_exist:
+        #获取函数
+        func = getattr(home, temp)
+        #执行函数并获取返回值
+        ret = func()
+        #将函数返回值响应给请求者
+        return ret
+    else:
+        return '404 not found'
+
+if __name__ == '__main__':
+    httpd = make_server('', 8001, RunServer)
+    print &quot;Serving HTTP on port 8001...&quot;
+    httpd.serve_forever()
+</code></pre>
+
+<p>3、反射操作类和对象中的成员</p>
+
+<pre><code>class Foo:
+    static_name = 'tom'
+    def __init__(self):
+        self.name = &quot;eric&quot;
+
+    def show(self):
+        pass
+    @staticmethod
+    def static_method():
+        pass
+    @classmethod
+    def class_show(cls):
+        pass
+#先看类中都有什么方法
+print Foo.__dict__.keys()
+#['__module__', 'static_method', 'show', 'static_name', 'class_show', '__doc__', '__init__']
+print hasattr(Foo,'class_show') #看类中是否有class_show方法
+obj = Foo()
+#看对象中有什么，结果为{'name': 'eric'}
+print obj.__dict__
+print hasattr(obj,'name') #结果为True
+print hasattr(obj,'show') #结果为True
+</code></pre>
+
+<p>为什么对象中只有name,而用hasattr(obj,&lsquo;show&rsquo;)却显示为True，因为对象中存在类对象指针，对象首先在自己的内存中找，如果没有找到再到类中找，所以就会显示找到，返回结果为True</p>
+
+<h2 id="其他模块反射效果">其他模块反射效果</h2>
+
+<p>4、上面的操作都是在自己模块的内部执行，接下来看在其他模块执行效果</p>
+
+<pre><code>import home
+cls = getattr(home,'Foo')
+print cls #home.Foo 得到是类
+obj = cls() #cls是类，类加括号就是实例化，也就是创建对象，执行__init__方法
+name = getattr(obj,'name') #在对象中找name
+print name
+</code></pre>
+
+<p>一句话总结反射：在容器中找对象的元素</p>
+
+<h2 id="动态导入模块">动态导入模块</h2>
+
+<p>5、动态导入模块</p>
+
+<pre><code>try:
+    controller,action = raw_input(&quot;url:&quot;).split(&quot;/&quot;)
+    module = __import__(controller)
+    func = getattr(module,action)
+    ret = func()
+    print ret
+except Exception,e:
+    print &quot;请正确输入url&quot;
+</code></pre>
+
+<h1 id="参考文档">参考文档</h1>
+
+<p><a href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/4323575?fr=aladdin">https://baike.baidu.com/item/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/4323575?fr=aladdin</a><br />
+<a href="http://crazyforever.blog.51cto.com/7362974/1737341/">http://crazyforever.blog.51cto.com/7362974/1737341/</a></p>
+
+            </article>
+
+            <ul class="pager blog-pager">
+                
+                <li class="previous">
+                    <a href="https://www.eee.wiki/posts/python%E5%87%BD%E6%95%B0%E5%92%8C%E8%A3%85%E9%A5%B0%E5%99%A8/" data-toggle="tooltip" data-placement="top" title="Python函数和装饰器">&larr; Previous Post</a>
+                </li>
+                 
+                <li class="next">
+                    <a href="https://www.eee.wiki/posts/python%E5%B8%B8%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93/" data-toggle="tooltip" data-placement="top" title="Python常用标准库">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+            
+            <div>
+                 
+                <h2>See Also</h2>
+                <ul>
+                    
+                    <li><a href="/posts/python%E5%87%BD%E6%95%B0%E5%92%8C%E8%A3%85%E9%A5%B0%E5%99%A8/">Python函数和装饰器</a></li>
+                    
+                    <li><a href="/posts/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/">Python文件处理</a></li>
+                    
+                    <li><a href="/posts/python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Python常用数据类型</a></li>
+                    
+                    <li><a href="/posts/python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">Python流程控制</a></li>
+                    
+                    <li><a href="/posts/%E5%B8%B8%E8%A7%81nginx%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/">常见nginx故障排查</a></li>
+                    
+                </ul>
+                
+            </div>
+            
+            
+            
+              
+            </div>
+            
+            
+        </div>
+    </div>
+    </section>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ft8a0o1hlcj30ax0azjt4.jpg">
+          
+              <li>
+                <a href="mailto:976199267@qq.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/wtli/wtli.github.io" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+        &copy;2017-2018
+          
+            
+              wangtian
+            
+          
+          
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.eee.wiki/">wtlinux</a>
+          
+        </p>
+        <p class="credits theme-by text-muted">
+        <a href="http://www.wtlinux.com">wtlinux.com</a>&nbsp;&bull;&nbsp;<a href="https://www.eee.wiki">eee.wiki</a>&nbsp;&bull;&nbsp;<a href="https://www.bldz.com">www.bldz.com</a>
+        </p>
+
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/bootstrap.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/photoswipe-ui-default.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/photoswipe.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/auto-render.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/main.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/prism.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/katex.min.js"></script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+  </body>
+</html>
+
