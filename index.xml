@@ -7,10 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; Copyright 2018 wtlinux</copyright>
-    <lastBuildDate>Sat, 21 Jul 2018 22:33:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jul 2018 00:11:56 +0800</lastBuildDate>
     
 	<atom:link href="http://www.wtlinux.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo搭建个人博客教程</title>
+      <link>http://www.wtlinux.com/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sun, 22 Jul 2018 00:11:56 +0800</pubDate>
+      
+      <guid>http://www.wtlinux.com/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</guid>
+      <description>一直有想整理自己博客的想法，但是由于各种原因一再搁置，第一是通过写文章让自己的技术得以沉淀，第二也可以进行交流，互相成长。第三也可以向大家展示自己的写作风格以及中间贯穿的一些思想。
+组件介绍  hugo 主要生成博客的工具。
+ github 需要用github来托管网站。
+ markdown你需要知道的markdown语法。
+ 域名别人访问你网站的网址。
+ ipic图床神器，可以上传一些图片。
+   注册好自己的域名和github之后，就可以构建自己的网站啦。
+ hugo 简介 hugo是使用go语言编写的，有几百种主题可供选择，也可以与自己个性化设置等相结合。官网上说hugo是世界上最快的网站构建框架，也是最受欢迎的开源静态站点生成器之一。凭借其惊人的速度和灵活性，hugo使网站构建变得更加有趣。
+安装 Mac版安装
+brew install hugo  查看是否安装成功
+ $ hugo version Hugo Static Site Generator v0.41 darwin/amd64  使用 首先构建自己的网站，wtlinux.com是我注册的域名
+ $ hugo new site wtlinux.com  查看目录结构
+ $ tree wtlinux.com/ wtlinux.com/ ├── archetypes │ └── default.md ├── config.toml ├── content ├── data ├── layouts ├── static └── themes  archetypes构建新文章是默认的配置</description>
+    </item>
     
     <item>
       <title>About</title>
