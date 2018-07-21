@@ -2,125 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on wtlinux</title>
-    <link>https://www.eee.wiki/tags/</link>
+    <link>http://www.wtlinux.com/tags/</link>
     <description>Recent content in Tags on wtlinux</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <managingEditor>976199267@qq.com (wangtian)</managingEditor>
-    <webMaster>976199267@qq.com (wangtian)</webMaster>
-    <copyright>(c) 2018 wangtian.</copyright>
-    <lastBuildDate>Thu, 19 Jul 2018 15:07:07 +0800</lastBuildDate>
+    <language>zh</language>
+    <copyright>&amp;copy; Copyright 2018 wtlinux</copyright>
     
-	<atom:link href="https://www.eee.wiki/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.wtlinux.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Dev</title>
-      <link>https://www.eee.wiki/tags/dev/</link>
-      <pubDate>Thu, 19 Jul 2018 15:07:07 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/dev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Error</title>
-      <link>https://www.eee.wiki/tags/error/</link>
-      <pubDate>Thu, 19 Jul 2018 11:00:01 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/error/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kafka</title>
-      <link>https://www.eee.wiki/tags/kafka/</link>
-      <pubDate>Tue, 17 Jul 2018 16:59:56 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Me</title>
-      <link>https://www.eee.wiki/tags/me/</link>
-      <pubDate>Fri, 13 Jul 2018 17:02:42 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/me/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mongo</title>
-      <link>https://www.eee.wiki/tags/mongo/</link>
-      <pubDate>Tue, 17 Jul 2018 14:59:14 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/mongo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://www.eee.wiki/tags/nginx/</link>
-      <pubDate>Thu, 19 Jul 2018 11:00:01 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ops</title>
-      <link>https://www.eee.wiki/tags/ops/</link>
-      <pubDate>Tue, 17 Jul 2018 16:59:56 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/ops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.eee.wiki/tags/python/</link>
-      <pubDate>Thu, 19 Jul 2018 15:07:07 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talk</title>
-      <link>https://www.eee.wiki/tags/talk/</link>
-      <pubDate>Tue, 17 Jul 2018 14:59:49 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/talk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wtlinux</title>
-      <link>https://www.eee.wiki/tags/wtlinux/</link>
-      <pubDate>Fri, 13 Jul 2018 17:07:11 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/wtlinux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>目录</title>
-      <link>https://www.eee.wiki/tags/%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Fri, 13 Jul 2018 17:07:11 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/%E7%9B%AE%E5%BD%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>索引</title>
-      <link>https://www.eee.wiki/tags/%E7%B4%A2%E5%BC%95/</link>
-      <pubDate>Fri, 13 Jul 2018 17:07:11 +0800</pubDate>
-      <author>976199267@qq.com (wangtian)</author>
-      <guid>https://www.eee.wiki/tags/%E7%B4%A2%E5%BC%95/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
